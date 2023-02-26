@@ -1,0 +1,46 @@
+# Ingenieria en sistemas de la computacion
+# curso: Programacion basica
+# primer avance
+# Grupo 5
+# Autores: QUESADA BONILLA JOSEPH DAVID / MANZANARES NUÑEZ DAVID EUGENIO / BARRIENTOS ACUÑA KENNETH ANDREY
+# Profesor: CAMACHO MORA ALVARO DIONISIO
+
+# 1- bienvenida y menu principal
+
+
+while True:    
+    print ("****************************************************")
+    print ("*                   Bienvenido                     *")
+    print ("*                Global Bank Inc                   *")
+    print ("*        (1) Nuevo Usuario (2) ingresar            *")
+    print ("*          (3) Configuracion Avanzada              *")
+    print ("*                  (4) salir                       *")
+    print ("****************************************************")
+
+    opcion = int (input())
+
+    if opcion == 1:
+        new_user = input ("Por favor ingrese un Usuario\n")
+        
+        while True:
+            password1 = input ("Por favor ingrese una contraseña\n")
+            password2 = input ("Por favor ingrese nuevamente la contraseña\n")
+
+            if password1 != password2:
+                print ("Las contraseñas no coinciden, por favor ingrese nuevamente la contraseña\n")
+                
+            elif password1 == password2:
+                pin = int(input ("Por favor cree un PIN para continuar\n"))
+                break
+    elif opcion == 2: 
+        user = input("Por favor escriba su nombre de usuario\n")
+        password = input ("Por favor escriba la contraseña\n")
+        for i in range(3):
+            if user == new_user and password == password1:
+                print("Bienvenido, ", user)
+                break
+        else: 
+            print("Credenciales incorrectas")
+        break   
+    else:              
+        print("opcion invalida")
