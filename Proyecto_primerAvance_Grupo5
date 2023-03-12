@@ -6,41 +6,67 @@
 # Profesor: CAMACHO MORA ALVARO DIONISIO
 
 # 1- bienvenida y menu principal
+opcion = 0
+def menu():
 
-
-while True:    
     print ("****************************************************")
     print ("*                   Bienvenido                     *")
     print ("*                Global Bank Inc                   *")
     print ("*        (1) Nuevo Usuario (2) ingresar            *")
     print ("*          (3) Configuracion Avanzada              *")
     print ("*                  (4) salir                       *")
-    print ("****************************************************")
+    print ("****************************************************\n")
 
-    opcion = int (input())
+# inicio de While para el menu
+while True:    
+    menu()
 
+    opcion = int (input("Que opcion desea realizar?\n"))
+    # inicio del regsitro de usuario
     if opcion == 1:
-        new_user = input ("Por favor ingrese un Usuario\n")
-        
-        while True:
-            password1 = input ("Por favor ingrese una contraseña\n")
-            password2 = input ("Por favor ingrese nuevamente la contraseña\n")
+        # solicitud de datos para el usuario
+        new_user = input ("por favor ingrese su usuario\n")
+        new_password = input ("por favor ingrese una contraseña\n")
+        new_pin = input ("Por favor ingrese un numero Pin, el numero Pin tiene un maximo de 4 dígitos\n")
+        num_cedula = input ("Por favor escriba su numero de cedula, el numero de cedula tiene que ser de 9 dijitos\n")
+        # sistema para validar que el numero de cedula y el numero PIN sean de 9 y de 4 digitos, se utiliza la palabra reservada len para hacer la validacion 
+        if len(num_cedula) != 9:
+            print ("Error, El numero de cedula tiene que ser de 9 dígitos!\n")
+        elif len(new_pin) !=4: 
+            print ("Error, El numero Pin tiene que ser unicamente de 4 dígitos\n")
+        else:
+            print("Usuario registrado con exito")
 
-            if password1 != password2:
-                print ("Las contraseñas no coinciden, por favor ingrese nuevamente la contraseña\n")
-                
-            elif password1 == password2:
-                pin = int(input ("Por favor cree un PIN para continuar\n"))
-                break
+    # fin del regiustro de usuario
+
     elif opcion == 2: 
-        user = input("Por favor escriba su nombre de usuario\n")
-        password = input ("Por favor escriba la contraseña\n")
-        for i in range(3):
-            if user == new_user and password == password1:
-                print("Bienvenido, ", user)
-                break
-        else: 
-            print("Credenciales incorrectas")
-        break   
+
+        # inicio de la validacion de datos pora el Loggin
+        cedula = input ("por favor escriba su cedula\n")
+        if cedula != num_cedula:
+            print ("El numero de cedula, no coincide con el de ningun usuario registrado")
+        elif cedula == num_cedula:
+            intentos = 3 
+            for i in range(intentos):
+                password = input ("Por favor escriba su contraseña\n")
+                if password == new_password:
+                    print ("Bienvenido, ", new_user)    
+                    break
+                else: 
+                    print("La contraseña es incorrecta!")
+                
+                if i < intentos - 3:
+                    print("por favor, vuelver a escriba la contraseña.\n")
+            if password != new_password:
+                print("Has alcanzado el numero maximo de intentos")
+        # fin del loggin
+
+    elif opcion == 3:
+        print("Configuracion Avanzada")
+
+    # salir del programa 
+    elif opcion == 4:
+        print("Gracias por usar nuestro ATM, que tenga un buen dia")   
+        break
     else:              
         print("opcion invalida")
