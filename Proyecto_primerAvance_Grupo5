@@ -1,6 +1,3 @@
-# Ingenieria en sistemas de la computacion
-# curso: Programacion basica
-# primer avance
 # Grupo 5
 # Autores: QUESADA BONILLA JOSEPH DAVID / MANZANARES NUÑEZ DAVID EUGENIO / BARRIENTOS ACUÑA KENNETH ANDREY
 # Profesor: CAMACHO MORA ALVARO DIONISIO
@@ -15,7 +12,7 @@ def menu():
     print ("*        (1) Nuevo Usuario (2) ingresar            *")
     print ("*          (3) Configuracion Avanzada              *")
     print ("*                  (4) salir                       *")
-    print ("****************************************************\n")
+    print ("****************************************************\n") 
 
 # inicio de While para el menu
 while True:    
@@ -25,18 +22,28 @@ while True:
     # inicio del regsitro de usuario
     if opcion == 1:
         # solicitud de datos para el usuario
+        # validar que la cedula sea de 9 dijitos
+        while True:
+            num_cedula = input ("Por favor escriba su numero de cedula, el numero de cedula tiene que ser de 9 dijitos\n")
+            if not len(num_cedula) != 9:
+                print ("")
+                break
+            else: 
+                print("Error, El numero de cedula tiene que ser de 9 dígitos!\n")
+        # validar que la pin sea de 4 dijitos
+        while True: 
+            new_pin = input ("Por favor ingrese un numero Pin, el numero Pin tiene un maximo de 4 dígitos\n")
+            if not len(new_pin) != 4: 
+                print ("")
+                break
+            else:
+                print("Error, El numero Pin tiene que ser unicamente de 4 dígitos\n")
+
         new_user = input ("por favor ingrese su usuario\n")
         new_password = input ("por favor ingrese una contraseña\n")
-        new_pin = input ("Por favor ingrese un numero Pin, el numero Pin tiene un maximo de 4 dígitos\n")
-        num_cedula = input ("Por favor escriba su numero de cedula, el numero de cedula tiene que ser de 9 dijitos\n")
-        # sistema para validar que el numero de cedula y el numero PIN sean de 9 y de 4 digitos, se utiliza la palabra reservada len para hacer la validacion 
-        if len(num_cedula) != 9:
-            print ("Error, El numero de cedula tiene que ser de 9 dígitos!\n")
-        elif len(new_pin) !=4: 
-            print ("Error, El numero Pin tiene que ser unicamente de 4 dígitos\n")
-        else:
-            print("Usuario registrado con exito")
 
+        print("Usuario creado con exito\n")
+        
     # fin del regiustro de usuario
 
     elif opcion == 2: 
@@ -47,6 +54,7 @@ while True:
             print ("El numero de cedula, no coincide con el de ningun usuario registrado")
         elif cedula == num_cedula:
             intentos = 3 
+            # inicio del for para validar que no se exeda la cantidad de intentos para poder ingresar 
             for i in range(intentos):
                 password = input ("Por favor escriba su contraseña\n")
                 if password == new_password:
