@@ -22,6 +22,7 @@ while True:
     # inicio del regsitro de usuario
     if opcion == 1:
         # solicitud de datos para el usuario
+        new_user = input ("por favor ingrese su Nombre\n")
         # validar que la cedula sea de 9 dijitos
         while True:
             num_cedula = input ("Por favor escriba su numero de cedula, el numero de cedula tiene que ser de 9 dijitos\n")
@@ -39,12 +40,9 @@ while True:
             else:
                 print("Error, El numero Pin tiene que ser unicamente de 4 dígitos\n")
 
-        new_user = input ("por favor ingrese su usuario\n")
-        new_password = input ("por favor ingrese una contraseña\n")
-
         print("Usuario creado con exito\n")
         
-    # fin del regiustro de usuario
+    # fin del registro de usuario
 
     elif opcion == 2: 
 
@@ -56,16 +54,16 @@ while True:
             intentos = 3 
             # inicio del for para validar que no se exeda la cantidad de intentos para poder ingresar 
             for i in range(intentos):
-                password = input ("Por favor escriba su contraseña\n")
-                if password == new_password:
+                pin = input ("Por favor escriba su numero PIN\n")
+                if pin == new_pin:
                     print ("Bienvenido, ", new_user)    
                     break
                 else: 
-                    print("La contraseña es incorrecta!")
+                    print("El numero PIN es incorrecto!")
                 
                 if i < intentos - 3:
-                    print("por favor, vuelver a escriba la contraseña.\n")
-            if password != new_password:
+                    print("por favor, vuelver a escribir el numero PIM.\n")
+            if pin != new_pin:
                 print("Has alcanzado el numero maximo de intentos")
         # fin del loggin
 
