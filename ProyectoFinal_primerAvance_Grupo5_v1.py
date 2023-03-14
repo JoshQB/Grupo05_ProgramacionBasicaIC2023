@@ -5,7 +5,6 @@
 # Autores: QUESADA BONILLA JOSEPH DAVID / MANZANARES NUÑEZ DAVID EUGENIO / BARRIENTOS ACUÑA KENNETH ANDREY
 # Profesor: CAMACHO MORA ALVARO DIONISIO
 
-
 # 1- bienvenida y menu principal
 opcion = 0
 def menu():
@@ -43,6 +42,15 @@ while True:
                 break
             else:
                 print("Error, El numero Pin tiene que ser unicamente de 4 dígitos\n")
+        
+        while True:
+            deposito = int (input("Cuanto desea depositar ? Nota: el deposito minimo para el registro es de 100 000 colones.\n"))
+            deposito_minimo:int = 100000
+            if deposito == deposito_minimo:
+                print("deposito realizado con exito.\n")
+                break
+            else:
+                print("Error, el deposito minimo tiene que ser de 100 000 colones.\n")
 
         print("Usuario creado con exito\n")
         
@@ -60,7 +68,8 @@ while True:
             for i in range(intentos):
                 pin = input ("Por favor escriba su numero PIN\n")
                 if pin == new_pin:
-                    print ("Bienvenido, ", new_user)    
+                    print ("Bienvenido, ", new_user) 
+                    print ("Saldo actual: ", deposito)   
                     break
                 else: 
                     print("El numero PIN es incorrecto!")
