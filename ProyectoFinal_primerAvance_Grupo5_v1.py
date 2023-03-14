@@ -1,6 +1,10 @@
+# Ingenieria en sistemas de la computacion
+# curso: Programacion basica
+# primer avance
 # Grupo 5
 # Autores: QUESADA BONILLA JOSEPH DAVID / MANZANARES NUÑEZ DAVID EUGENIO / BARRIENTOS ACUÑA KENNETH ANDREY
 # Profesor: CAMACHO MORA ALVARO DIONISIO
+
 
 # 1- bienvenida y menu principal
 opcion = 0
