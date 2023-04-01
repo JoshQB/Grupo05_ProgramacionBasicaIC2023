@@ -2,7 +2,7 @@
 # curso: Programacion basica
 # primer avance
 # Grupo 5
-# Autores: QUESADA BONILLA JOSEPH DAVID / MANZANARES NUÑEZ DAVID EUGENIO / BARRIENTOS ACUÑA KENNETH ANDREY
+# Autores: QUESADA BONILLA JOSEPH DAVID
 # Profesor: CAMACHO MORA ALVARO DIONISIO
 usuarios = []
 
