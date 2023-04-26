@@ -1,6 +1,6 @@
 # Ingenieria en sistemas de la computacion
 # curso: Programacion basica
-# Tercer avance
+# Entrega final
 # Grupo 5
 # Autores: BARRIENTOS ACUÑA KENNETH ANDREY / QUESADA BONILLA JOSEPH DAVID 
 # Profesor: CAMACHO MORA ALVARO DIONISIO
